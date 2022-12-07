@@ -14,8 +14,10 @@ class Movie
     {
         $this->title = $_title;
     }
-
-
+    function get_title()
+    {
+        return $this->title;
+    }
 }
 
 
