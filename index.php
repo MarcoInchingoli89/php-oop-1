@@ -16,10 +16,10 @@ class Movie
     public $title;
     public $genre;
 
-    function __construct($_title, ...$_genre)
+    function __construct(...$_title /* ...$_genre */)
     {
         $this->title = $_title;
-        $this->genre = $_genre;
+        /* $this->genre = $_genre; */
     }
     function get_title()
     {
@@ -33,14 +33,14 @@ class Movie
     }
 }
 
-$dragon_heart = new Movie("Dragon Heart", "Fantasy", "Action", "Adventure");
+$movies = new Movie("Dragon Heart", "Nightmare", "Space Jam", "The Mask", "Robocop", "Terminator", "Matrix", "Nightmare Before Christmas");
 /* $dragon_heart->genre = "Fantasy"; */
-echo $dragon_heart->get_title() . '<br>';
-echo implode(", ", $dragon_heart->get_genre()) . '<br>';
+/* echo $dragon_heart->get_title() . '<br>'; */
+/* echo implode(", ", $dragon_heart->get_genre()) . '<br>'; */
 /* var_dump($dragon_heart); */
-$nightmare = new Movie("Nightmare", "Horror", "Supernatural", "Splatter");
+/* $nightmare = new Movie("Nightmare", "Horror", "Supernatural", "Splatter");
 echo $nightmare->get_title() . '<br>';
-echo implode(", ", $nightmare->get_genre());
+echo implode(", ", $nightmare->get_genre()); */
 /* $nightmare->genre = "Horror"; */
 /* var_dump($nightmare); */
 
@@ -72,13 +72,11 @@ echo implode(", ", $nightmare->get_genre());
     <div class="container">
         <div class="row">
             <div class="col">
-                <h3 class="text-center">Title</h3>
                 <ul>
-                    <li></li>
+                    <li class="list-unstyled text-center">
+                        <?php echo (implode("<br>", $movies->get_title())) ?>
+                    </li>
                 </ul>
-            </div>
-            <div class="col">
-                <h3 class="text-center">Genre</h3>
             </div>
         </div>
     </div>
