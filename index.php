@@ -28,6 +28,7 @@ class Movie
 
     function get_genre()
     {
+
         return $this->genre;
     }
 }
@@ -35,11 +36,11 @@ class Movie
 $dragon_heart = new Movie("Dragon Heart", "Fantasy", "Action", "Adventure");
 /* $dragon_heart->genre = "Fantasy"; */
 echo $dragon_heart->get_title() . '<br>';
-echo $dragon_heart->get_genre() . '<br>';
+echo implode(", ", $dragon_heart->get_genre()) . '<br>';
 /* var_dump($dragon_heart); */
 $nightmare = new Movie("Nightmare", "Horror", "Supernatural", "Splatter");
 echo $nightmare->get_title() . '<br>';
-echo $nightmare->get_genre();
+echo implode(", ", $nightmare->get_genre());
 /* $nightmare->genre = "Horror"; */
 /* var_dump($nightmare); */
 
